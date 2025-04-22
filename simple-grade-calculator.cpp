@@ -1,51 +1,56 @@
 
-// Simple Grade Calculator Using Switch Case  : --
+// Simple Grade Calculator Using if - else statement  : --
 
-// #include <iostream>
-// using namespace std;
+#include <iostream>
+using namespace std;
 
-// int main(){
+int main() {
 
-//     cout<<"Creating a simple calcultor of two variables !"<<endl; //Heading 
-
-//     int num1; //Taking variable 
-//     cout<<"Enter the first number : ";
-//     cin>>num1; //Taking input from user 
+    float marks;
     
-//     char op;  //Taking operator 
-//     cout<<"Enter the opertor : ";
-//     cin>>op;  //Taking input from user 
+    // Input the marks
+    cout << "Enter your marks (0 - 100): ";
+    cin >> marks;
 
-//     int num2; //Taking another variable 
-//     cout<<"Enter the first number : ";
-//     cin>>num2; //Taking input from user 
+    // Check for valid input
+    if (marks < 0 || marks > 100) {
+        cout << "Invalid marks. Please enter a value between 0 and 100." << endl;
+        return 1;
+    }
 
-//     switch(op){ //Switch case 
+    // Determine the grade
+    char grade;
+    if (marks >= 90) {
+        grade = 'A';
+        cout<<"Excellent Work ! "<<endl;
+        cout<<"You are eligible for next class ! "<<endl;
 
-//         case '+': //Conditon for sum 
-//         cout<<"The sum is "<<num1+num2;
-//         break;
+    } else if (marks >= 80) {
+        grade = 'B';
+        cout<<"Good Job ! "<<endl;
+        cout<<"You are eligible for next class ! "<<endl;
 
-//         case '-': //Conditon for substraction
-//         cout<<"The substraction is "<<num1-num2;
-//         break;
+    } else if (marks >= 70) {
+        grade = 'C';
+        cout<<"Great ! "<<endl;
+        cout<<"You are eligible for next class ! "<<endl;
 
-//         case '*': //Conditon for multiplication
-//         cout<<"The multiplication is "<<num1*num2;
-//         break;
+    } else if (marks >= 60) {
+        grade = 'D';
+        cout<<"Good Work ! "<<endl;
+        cout<<"You are eligible for next class ! "<<endl;
+    } else if (marks >= 50) {
+        grade = 'E';
+        cout<<"You pass ! "<<endl;
+        cout<<"You are eligible for next class ! "<<endl;
+    } else {
+        grade = 'F';
+        cout<<"Needs Improvement ! "<<endl;
+        cout<<"You are eligible not for next class ! "<<endl;
+    }
 
-//         case '/': //Conditon for division
-//         cout<<"The division is "<<num1/num2;
-//         break;
+    // Output the result
+    cout << "You got grade: " << grade << endl;
 
-//         case '%': //Conditon for modulus
-//         cout<<"The modulus is "<<num1%num2;
-//         break;
-
-//         default: //Conditon for default
-//         cout<<"Please enter a valid opertor ! ";
-//         break;
-//     }
-
-//     return 0;
-// }
+    return 0;
+}
